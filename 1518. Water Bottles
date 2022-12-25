@@ -1,0 +1,9 @@
+def numWaterBottles(self, numBottles: int, numExchange: int) -> int:
+
+        ans=numBottles
+        res=numBottles
+        while res >= numExchange:
+            ans=int(ans + res/numExchange)
+            res=(int)(res/numExchange) + (res%numExchange)
+
+        return ans
