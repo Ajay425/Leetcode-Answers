@@ -1,0 +1,14 @@
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+
+        res=[] #store the values every time we visit a node
+
+        def inorder(root):
+            if (root==None): #if root is none we simply return an empty list
+                return
+            inorder(root.left) #else we will got to the left 
+            res.append(root.val) #we start inserting the value
+            inorder(root.right) #calls the function again. We visit everything to the right and append them
+        inorder(root) #calling the root
+        return res
+            
